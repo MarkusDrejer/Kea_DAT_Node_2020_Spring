@@ -15,9 +15,7 @@ var friends = [];
 
 // What a lonely array. Add at least 3 friend objects to it.  
 
-friends.push("First");
-friends.push("Second");
-friends.push("Third");
+friends.push("First", "Second", "Third");
 
 for(var i in friends) {
     console.log(friends[i]);
