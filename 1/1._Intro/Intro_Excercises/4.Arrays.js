@@ -52,12 +52,9 @@ console.log(diet.pop());
 // Exercise 6 - Copy array
 
 // You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
-
-var dinnerTray = [];
-
 // --------------------------------------
 
-dinnerTray = diet.slice()  // start and end are optional
+var dinnerTray = diet.slice()  // start and end are optional
 console.log(dinnerTray);
 
 // --------------------------------------
