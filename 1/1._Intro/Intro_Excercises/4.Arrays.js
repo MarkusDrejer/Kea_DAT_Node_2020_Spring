@@ -15,11 +15,9 @@ var friends = [];
 
 // What a lonely array. Add at least 3 friend objects to it.  
 
-friends.push("First", "Second", "Third");
+friends.push(first = {"key1":1}, second = {"key2":2}, third = {"key3":3});
 
-for(var i in friends) {
-    console.log(friends[i]);
-}
+console.log(friends);
 
 // --------------------------------------
 // Exercise 3 - Get the index of first occurance of that value. 
@@ -41,9 +39,7 @@ var diet = ["tomato", "cucumber", "rocolla", "kale"]
 // --------------------------------------
 
 diet.splice(diet.indexOf("rocolla"), 0, "hamburger", "soda", "pizza");
-for(var j in diet) {
-    console.log(diet[j]);
-}
+console.log(diet);
 // --------------------------------------
 // Exercise 5 - Remove element
 
