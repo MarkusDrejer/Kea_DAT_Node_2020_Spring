@@ -17,11 +17,11 @@ console.log(parseFloat(numberOne) + parseFloat(numberTwo));
 var numberOne = "1.10";
 var numberTwo = "2.30";
 
-var total = parseFloat(numberOne) + parseFloat(numberTwo);
-console.log(total.toFixed(2));
+var total = (parseFloat(numberOne) + parseFloat(numberTwo)).toFixed(2);
+console.log(total);
 
 // --------------------------------------
-// Exercise 5 - Decimals and average
+// Exercise 5 - Decimals and average 
 
 var one = 10;
 var two = 45;
@@ -37,4 +37,26 @@ for(var i in nums) {
 average = total / nums.length;
 
 console.log(average.toFixed(5));
+// --------------------------------------
+
+// --------------------------------------
+// Exercise 6 - Get the character by index
+
+var letters = "abc"
+// Get me the character "c"
+
+console.log(letters[2]);
+console.log(letters[letters.length-1]);
+
+// --------------------------------------
+// Exercise 7 - Replace
+
+var fact = "You are learning javascript!";
+
+// capitalize the J in Javascript
+
+fact = fact.replace("j" , "J");
+
+console.log(fact);
+
 // --------------------------------------
