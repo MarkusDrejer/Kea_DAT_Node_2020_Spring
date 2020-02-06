@@ -15,7 +15,7 @@ var friends = [];
 
 // What a lonely array. Add at least 3 friend objects to it.  
 
-friends.push(first = {"key1":1}, second = {"key2":2}, third = {"key3":3});
+friends.push(tom = {"name":"Tom"}, jerry = {"name":"Jerry"}, bob = {"name":"Bob"});
 
 console.log(friends);
 
@@ -47,3 +47,47 @@ console.log(diet);
 // Don't remove by index. You know in advance that it's the last in the array because you are too full already.
 
 console.log(diet.pop());
+
+// --------------------------------------
+// Exercise 6 - Copy array
+
+// You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
+
+var dinnerTray = [];
+
+// --------------------------------------
+
+dinnerTray = diet.slice()  // start and end are optional
+console.log(dinnerTray);
+
+// --------------------------------------
+// Exercise 7 - For loop
+
+var letters = ["a","b","c", "d", "e", "f", "g", "h"];
+
+// log every second char in the array starting from b
+
+for(var i = 1; i < letters.length; i += 2) {
+    console.log(letters[i]);
+}
+// --------------------------------------
+// Exercise 8 - For loop and if statement
+
+var numbers  = [5, 3, 2, 7, 11, 12, 0, -20, 6];
+
+var discardedNumbers = [];
+
+// log the element if the number is above 6 or below 0
+// else push them to the array discardedNumbers
+
+numbers.forEach(element => {
+    if(element > 6 || element < 0) {
+        console.log(element);
+    }
+    else {
+        discardedNumbers.push(element);
+    }
+});
+console.log(discardedNumbers);
+
+// --------------------------------------
