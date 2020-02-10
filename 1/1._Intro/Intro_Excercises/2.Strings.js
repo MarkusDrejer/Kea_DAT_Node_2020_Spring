@@ -61,4 +61,13 @@ console.log(`The fact is ${fact}`)
 
 console.log(fact);
 
+test = {
+    name: "Markus",
+    age: 22
+}
+
+const { name, age } = test;
+
+console.log(name)
+
 // --------------------------------------
