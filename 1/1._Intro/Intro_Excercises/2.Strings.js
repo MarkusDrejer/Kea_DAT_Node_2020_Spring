@@ -57,6 +57,8 @@ var fact = "You are learning javascript!";
 
 fact = fact.replace("j" , "J");
 
+console.log(`The fact is ${fact}`)
+
 console.log(fact);
 
 // --------------------------------------
