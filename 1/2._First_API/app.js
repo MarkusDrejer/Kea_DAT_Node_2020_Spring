@@ -15,17 +15,7 @@ app.get("/aboutMe", (req, res) => {
         city: "Copenhagen", 
         profession: "Computers"
     }
-    const you = {
-        firstName: "Thomas", 
-        lastName: "Vindelev", 
-        city: "Copenhagen", 
-        profession: "Computers"
-    }
-    const us = {
-        me, 
-        you
-    }
-    res.send(us)
+    res.send(me)
 })
 
 app.listen(3000, error => {
@@ -46,3 +36,30 @@ app.get("/aboutThisWebsite", (req, res) => {
     }
     res.send(thisWebSite);
 });
+
+app.get("/allOfUs", (req, res) => {
+    const me = {
+        firstName: "Markus", 
+        lastName: "Drejer", 
+        city: "Copenhagen S", 
+        profession: "Computers"
+    }
+    const you = {
+        firstName: "Thomas", 
+        lastName: "Vindelev", 
+        city: "Copenhagen H", 
+        profession: "Computers"
+    }
+    const someoneElse = {
+        firstName: "Anders",
+        lastName: "Latif",
+        city: "Copenhagen H",
+        profession: "Lecturer"
+    }
+    const us = {
+        me, 
+        you,
+        someoneElse
+    }
+    res.send(us)
+})
