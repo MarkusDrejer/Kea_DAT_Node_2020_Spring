@@ -35,3 +35,19 @@ const prepareIntroduction = (introducerFunction, name) => {
 }
 
 prepareIntroduction(introduce, "Markus");
+
+const aboutMe = (me) => {
+    console.log("My hobby is", me.hobby);
+}
+
+let myself = {
+    hobby: pokeMe
+};
+
+aboutMe(myself);
+
+const callLater = {
+    toCall: (name) => console.log(name)
+};
+
+callLater.toCall("Nick");
