@@ -41,7 +41,7 @@ const aboutMe = (me) => {
 }
 
 let myself = {
-    hobby: pokeMe
+    hobby: "Computers"
 };
 
 aboutMe(myself);
