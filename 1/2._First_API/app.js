@@ -28,4 +28,21 @@ app.get("/aboutMe", (req, res) => {
     res.send(us)
 })
 
-app.listen(3000);
+app.listen(3000, error => {
+    if (error) {
+        console.log(error);
+    }
+    console.log("Server is running on port 3000");
+});
+
+
+app.get("/aboutThisWebsite", (req, res) => {
+    const thisWebSite = {
+        port: "3000",
+        hostname: "localhost:3000 or 127.0.0.1:3000",
+        titel: "NodeJs learning website",
+        description: "This site is used to learn the basics of NodeJs",
+        type: "REST"
+    }
+    res.send(thisWebSite);
+});
