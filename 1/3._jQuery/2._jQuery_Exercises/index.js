@@ -28,16 +28,16 @@ $(".used-box").click(function () {
 });
 
 //16
-$("#submit-button").mouseover(() => {
-    $(".button-group").append("<h1 class='ready'>You're ready to click.</h1>");
-}).mouseleave(() => {
-    $(".ready").remove();
+$("#submit-button").mouseenter(() => {
+    $(event.currentTarget).text("You're ready to click.");
+}).mouseout(() => {
+    $(event.currentTarget).text("Click.");
 });
 //17
-var i = $("#first-list li").length + 1;
+
 $("#submit-button").click(function () {
+    var i = $("#first-list li").length + 1;
     $("#first-list").append("<li>Reason " + i + "</li>");
-    i+=1;
     //18
     console.log($(this).parent());
 });
