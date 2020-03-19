@@ -2,8 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+
 
 let devices = [
     {id: 1, type: "Computer"},
