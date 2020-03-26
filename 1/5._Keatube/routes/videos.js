@@ -9,8 +9,12 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         const fileName = crypto.randomBytes(20).toString("hex");
         const mimetypeArray = file.mimetype.split("/");
-        const extension = "." + mimetypeArray.pop();
-        cb(null, fileName + extension);
+        if(mimetypeArray[0] === "video") {
+            const extension = "." + mimetypeArray.pop();
+            cb(null, fileName + extension);
+        } else {
+            cb("Not a VideoError. Mimetype: " + file.mimetype);
+        }
     }
 });
 const upload = multer({storage: storage});
