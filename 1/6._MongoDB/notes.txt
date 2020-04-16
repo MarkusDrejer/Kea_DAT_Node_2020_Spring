@@ -1,0 +1,11 @@
+MongoDB commands:
+
+show dbs (show all databases)
+
+use <db> (switch to a db, if no db with that name exists create one)
+db.createCollection("<name>") (create a collection in a database with a specific name)
+
+db.<collection>.insert({<key>: <value>}) (insert into a specific collection a JSON object with given key,value)
+
+db.<collection>.find({<key: <value>}) (will find the object matching the key and value, leave empty for all)
+db.<collection>.find({<key: {$exists: true}}) (will find all objects with a specific key)

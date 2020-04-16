@@ -1,3 +1,4 @@
+const Swal = require('sweetalert2')
 let fileValid = false;
 
 function validateForm() {
@@ -8,6 +9,10 @@ function validateForm() {
     const category = document.forms.videoupload.category.value;
 
     if (title.length < 8 || title.length > 64) {
+        Swal.fire(
+        'You fucked up',
+        'error'
+        )
         return false;
     }
 
