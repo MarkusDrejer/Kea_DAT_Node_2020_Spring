@@ -1,7 +1,9 @@
 
 exports.seed = function(knex) {
       // Inserts seed entries
-      return knex('users').insert([
-        {username: 'user1', password: 'newPass', age: "22", role_id: "1", }
-      ]);
+      return knex('roles').select().then(roles => {
+        return knex('users').insert([
+          {username: 'user1', password: 'newPass', role_id: roles.find(role => role.role === 'ADMIN').id }
+        ]);
+      });
 };
