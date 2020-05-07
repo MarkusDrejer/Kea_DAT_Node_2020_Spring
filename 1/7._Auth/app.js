@@ -1,8 +1,22 @@
 const express = require('express');
 const app = express();
 
-app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+
+const session = require('express-session');
+app.use(session({
+    secret: require('./config/mysqlCredentials.js').sessionSecret,
+    resave: false,
+    saveUninitialized: true
+  }));
+
+const rateLimit = require('express-rate-limit');
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 8
+});
+app.use("/login", limiter);
+app.use("/signup", limiter);
 
 /* Setup Objection + Knex */
 const { Model } = require('objection');
@@ -16,8 +30,10 @@ const knex = Knex(knexFile.development);
 Model.knex(knex);
 
 /* Add Routes */
-const authRoutes = require('./routes/auth.js');
-app.use(authRoutes);
+const authRoute = require('./routes/auth.js');
+const usersRoute = require('./routes/users.js');
+app.use(authRoute);
+app.use(usersRoute);
 
 
 /* Start Server */

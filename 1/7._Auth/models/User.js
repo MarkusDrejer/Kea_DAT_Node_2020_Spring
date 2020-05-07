@@ -1,18 +1,16 @@
 const { Model } = require('objection');
-const role = require('./Role.js');
+const Role = require('./Role.js');
 
 class User extends Model {
-    static get tableName() {
-        return 'users';
-    }
+    static tableName = 'users';
 
     static relationMappings = {
-        owner: {
+        role: {
             relation: Model.BelongsToOneRelation,
-            modelClass: role,
+            modelClass: Role,
             join: {
                 from: 'users.roleId',
-                to: 'role.id'
+                to: 'roles.id'
             }
         }
     };
