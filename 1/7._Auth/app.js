@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 const session = require('express-session');
 app.use(session({
@@ -17,6 +18,7 @@ const limiter = rateLimit({
 });
 app.use("/login", limiter);
 app.use("/signup", limiter);
+app.use(express.static("public"));
 
 /* Setup Objection + Knex */
 const { Model } = require('objection');

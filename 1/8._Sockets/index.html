@@ -11,13 +11,19 @@
     <h2>What's on your mind?</h2>
     <input id="thoughts" placeholder="write"/>
     <button id="btn-submit">Post</button>
+    <div id="messages"></div>
     <script>
-        const socket = io.connect("localhost:3000");
-            $('#btn-submit').click(() => {
-                console.log($('#thoughts').val());
-                $('#thoughts').val("");
-                socket.emit("I'm thinking about this", {thoughts});
-            });
+        const socket = io.connect("localhost:3000")
+        $("#btn-submit").click(function() {
+            const thoughts = $('#thoughts').val();
+            console.log(thoughts);
+            $("#thoughts").val("")
+            socket.emit("I'm thinking about this", {thoughts})
+        });
+
+        socket.on("Someone said", data => {
+            $('#messages').prepend(`<div>${data.thoughts}</div>`);
+        });
     </script>
 </body>
 </html>
