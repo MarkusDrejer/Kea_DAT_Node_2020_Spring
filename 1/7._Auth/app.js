@@ -34,8 +34,10 @@ Model.knex(knex);
 /* Add Routes */
 const authRoute = require('./routes/auth.js');
 const usersRoute = require('./routes/users.js');
+const contentRoute = require('./routes/content.js');
 app.use(authRoute);
 app.use(usersRoute);
+app.use(contentRoute);
 
 
 /* Start Server */

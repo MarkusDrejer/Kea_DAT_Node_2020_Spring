@@ -1,0 +1,67 @@
+h1 {
+	text-align: center;
+}
+
+.container {
+    display: block;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    padding: 2em 4em 2em 4em;
+    margin: 1em 2em;
+    text-align: left;
+    background: rgb(202, 202, 202);
+	border-radius: 2em;
+    width: 60%;
+}
+
+label {
+	font-size: 0.85em;
+	margin-left: 0.5em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1em;
+    border: 0.5em solid #ccc;
+    border-radius: 1em;
+    box-sizing: border-box;
+    margin-top: 0.5;
+    margin-bottom: 1em;
+    resize: vertical;
+}
+
+button {
+    background-color: #4CAF50;
+    font-size: medium;
+	margin: 0 auto;
+	outline: 0;
+	color: white;
+	border: 0;
+	padding: 1em 1.5em;
+	border-radius: 2em;
+	transition: all ease-in-out 0.1s;
+	position: relative;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+}
+
+#cancel {
+    text-decoration: none;
+    background-color: rgb(179, 0, 0);
+    font-size: medium;
+	margin: 0 auto;
+	outline: 0;
+	color: white;
+	border: 0;
+	padding: 1em 1.5em;
+	border-radius: 2em;
+	transition: all ease-in-out 0.1s;
+	position: relative;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+}

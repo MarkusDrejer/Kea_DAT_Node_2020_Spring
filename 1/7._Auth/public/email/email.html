@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/email/email.css" type="text/css">
+    <link rel="stylesheet" href="/global.css" type="text/css">
+    <title>Send email</title>
+</head>
+<body>
+
+    <a id="logout" href="/log Out">Logout</a>
+
+    <div class="container">
+        <h1>Drop an email</h1>
+
+        <form action="/sendEmail" name="contact_form" method="POST">
+            <label>To</label>
+            <input name="to" type="email" required placeholder="To"/>
+            <br>
+            <label>From</label>
+            <input name="from" type="email" required placeholder="From"/>
+            <br>
+            <label>Subject</label>
+            <input name="subject" type="text" required placeholder="Subject"/>
+            <br>
+            <label>Message</label><br>
+            <textarea name="message" cols="30" rows="10" placeholder="Enter your message here ..." required></textarea>
+
+            <div class="center">
+                <a id="cancel" href="/">Cancel</a>
+                <button type="submit">Send</button>
+            </div>
+        </form>	
+    </div>
+
+</body>
+</html>
