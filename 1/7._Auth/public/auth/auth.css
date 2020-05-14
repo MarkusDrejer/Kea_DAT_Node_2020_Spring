@@ -33,6 +33,7 @@ button {
 
 a {
     text-decoration: none;
+    font-size: small;
     color: white;
     padding: 0.2em 0.5em;
     border: none;

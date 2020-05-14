@@ -1,0 +1,34 @@
+h1 {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 2.5em;
+  }
+
+.column h2 {
+    text-align: center;
+    font-size: large;
+}
+
+.column img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 45em;
+}
+
+#features {
+    text-align: center;
+    margin-top: 2em;
+}
+
+#features a {
+    text-decoration: underline;
+    font-size: large;
+    color: green;
+}
