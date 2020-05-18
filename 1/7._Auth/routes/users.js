@@ -7,7 +7,6 @@ router.get('/users/roles', async (req, res) => {
     return res.send({ response: users });
 });
 
-
 router.get('/setsessionvalue', (req, res) => {
     console.log(req.sessionID),
     req.session.myValue = req.sessionID;

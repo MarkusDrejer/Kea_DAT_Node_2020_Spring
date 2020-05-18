@@ -3,14 +3,14 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 
 router.get("/", (req, res) => {
-    if(req.session.username) {
+    if(req.session.user) {
         return res.sendFile(path.join(__dirname, '../public/mainPage/mainPage.html'));
     }
     return res.redirect('/login');
 });
 
 router.get("/sendEmail", (req, res) => {
-    if(req.session.username) {
+    if(req.session.user) {
         return res.sendFile(path.join(__dirname, '../public/email/email.html'));
     }
     return res.redirect('/login');

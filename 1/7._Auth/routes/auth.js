@@ -22,7 +22,7 @@ router.post('/login', async (req, res) => {
 
         const match = await bcrypt.compare(password, userFound[0].password);
         if(match) {
-            //Make session on success
+            req.session.user = {id: userFound[0].id, role: userFound[0].role_id}
             req.session.username = username;
             return res.redirect("/");
         }
@@ -60,7 +60,7 @@ router.post('/signup', async (req, res) => {
                 role_id: userRole[0].id
             });
             
-            //Direct login and set up session
+            req.session.user = {id: userFound[0].id, role: userFound[0].role_id}
             req.session.username = username;
             return res.redirect("/");
 
