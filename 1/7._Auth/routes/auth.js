@@ -20,10 +20,9 @@ router.post('/login', async (req, res) => {
             return res.status(400).send({ response: "User does not exist" });
         } 
 
-        const match = await bcrypt.compare(password, userFound[0].password);
+        const match = bcrypt.compare(password, userFound[0].password);
         if(match) {
-            req.session.user = {id: userFound[0].id, role: userFound[0].role_id}
-            req.session.username = username;
+            req.session.user = {id: userFound[0].id, username: userFound[0].username, role: userFound[0].role_id}
             return res.redirect("/");
         }
     } catch(error) {
@@ -53,15 +52,14 @@ router.post('/signup', async (req, res) => {
             }
 
             const userRole = await Role.query().select().where('role', 'USER');
-            const hashedPassword = await bcrypt.hash(password, saltRounds);
+            const hashedPassword = bcrypt.hash(password, saltRounds);
             const user = await User.query().insert({
                 username: username,
                 password: hashedPassword,
                 role_id: userRole[0].id
             });
             
-            req.session.user = {id: userFound[0].id, role: userFound[0].role_id}
-            req.session.username = username;
+            req.session.user = {id: userFound[0].id, username: userFound[0].username, role: userFound[0].role_id}
             return res.redirect("/");
 
         } catch(error) {

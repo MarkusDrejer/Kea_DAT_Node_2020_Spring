@@ -32,7 +32,7 @@ router.post("/sendEmail", async (req, res) => {
         });
 
         const info = await transporter.sendMail({
-            from: `"${req.session.username}" <${from}>`,
+            from: `"${req.session.user.username}" <${from}>`,
             to: to,
             subject: subject,
             text: message

@@ -1,22 +1,23 @@
-const Swal = require('sweetalert2')
+
 let fileValid = false;
 
 function validateForm() {
-
     const title = document.forms.videoupload.title.value;
     const description = document.forms.videoupload.description.value;
     const tags = document.forms.videoupload.tags.value;
     const category = document.forms.videoupload.category.value;
-
+    
     if (title.length < 8 || title.length > 64) {
-        Swal.fire(
-        'You fucked up',
-        'error'
-        )
+        Swal.fire({
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'Cool' 
+        })
         return false;
     }
 
-    if (description > 2048) {
+    if (description.length > 2048) {
         return false;
     }
 
@@ -25,20 +26,22 @@ function validateForm() {
 
 function handleFileUpload(files) {
     const file = files[0];
-    const fileSize = file.size;
-    const mimeArray = file.type.split("/");
-    const fileType = mimeArray[0];
+    
+    const mimeTypeArray = file.type.split("/");
 
-    if (fileType !== "video") {
+    if (mimeTypeArray[0] !== "video") {
         fileValid = false;
         return;
     }
 
-    twoGBFileLimit = 2147483548;
+    const fileSize = file.size;
+
+    const twoGBFileLimit = 2147483648;
 
     if (fileSize > twoGBFileLimit) {
         fileValid = false;
         return;
     }
+
     fileValid = true;
 }
