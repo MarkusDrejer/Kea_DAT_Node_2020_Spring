@@ -28,6 +28,7 @@ function handleFileUpload(files) {
     const file = files[0];
     
     const mimeTypeArray = file.type.split("/");
+    console.log(mimeTypeArray)
 
     if (mimeTypeArray[0] !== "video") {
         fileValid = false;
